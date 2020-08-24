@@ -1,14 +1,18 @@
 package org.zd.IoC;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
+
 public class MusicPlayer {
-    private Music music;
+    private List<Music> music = new ArrayList<>();
     private String name;
     private int volume;
 
     public MusicPlayer(){
     }
 
-    public void setMusic(Music music) {
+    public void setMusic(List<Music> music) {
         this.music = music;
     }
 
@@ -28,7 +32,9 @@ public class MusicPlayer {
         return volume;
     }
 
-    public void playMusic(){
-        System.out.println("playing: "+music.getSong());
+    public void playMusicList(){
+        for (Music element: music) {
+            System.out.println("playing: " + element.getSong());
+        }
     }
 }
