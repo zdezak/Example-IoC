@@ -10,7 +10,9 @@ public class Main {
         MusicPlayer firstPlayer = context.getBean("musicPlayer",MusicPlayer.class);
         MusicPlayer secondPlayer = context.getBean("musicPlayer",MusicPlayer.class);
         boolean comparison = firstPlayer == secondPlayer;
-
+        firstPlayer.setVolume(10);
+        System.out.println(firstPlayer.getVolume());
+        System.out.println(secondPlayer.getVolume());
         System.out.println(comparison);
         System.out.println(firstPlayer);
         System.out.println(secondPlayer);

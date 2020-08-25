@@ -11,7 +11,8 @@
         class="org.zd.IoC.RockMusic">
         </bean>
         <bean id="musicPlayer"
-              class="org.zd.IoC.MusicPlayer">
+              class="org.zd.IoC.MusicPlayer"
+              scope="prototype">
               <property name="music" ref="musicBean" />
               <property name="name" value="${musicPlayer.name}"/>
               <property name="volume" value="${musicPlayer.volume}"/>
