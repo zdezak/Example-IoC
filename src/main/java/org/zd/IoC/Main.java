@@ -16,6 +16,8 @@ public class Main {
         System.out.println(comparison);
         System.out.println(firstPlayer);
         System.out.println(secondPlayer);
+        firstPlayer.playMusic();
+
         context.close();
     }
 }
