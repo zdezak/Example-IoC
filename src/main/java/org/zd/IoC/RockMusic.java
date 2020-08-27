@@ -1,5 +1,8 @@
 package org.zd.IoC;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class RockMusic implements Music {
     public void doMyInit() {
         System.out.println("Doing my initialization");

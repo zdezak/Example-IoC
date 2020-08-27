@@ -2,7 +2,7 @@ package org.zd.IoC;
 
 import org.springframework.stereotype.Component;
 
-@Component("musicBean")
+@Component
 public class ClassicalMusic implements Music {
     @Override
     public String getSong() {
