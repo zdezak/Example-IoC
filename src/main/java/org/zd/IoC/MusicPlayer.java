@@ -5,7 +5,8 @@ public class MusicPlayer {
     private String name;
     private int volume;
 
-    public MusicPlayer(){
+    public MusicPlayer(Music music){
+        this.music = music;
     }
 
     public void setMusic(Music music) {

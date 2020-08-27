@@ -7,16 +7,9 @@ public class Main {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml"
         );
-        MusicPlayer firstPlayer = context.getBean("musicPlayer",MusicPlayer.class);
-        MusicPlayer secondPlayer = context.getBean("musicPlayer",MusicPlayer.class);
-        boolean comparison = firstPlayer == secondPlayer;
-        firstPlayer.setVolume(10);
-        System.out.println(firstPlayer.getVolume());
-        System.out.println(secondPlayer.getVolume());
-        System.out.println(comparison);
-        System.out.println(firstPlayer);
-        System.out.println(secondPlayer);
-        firstPlayer.playMusic();
+        Music music = context.getBean("musicBean",Music.class);
+        MusicPlayer Player = new MusicPlayer(music);
+        Player.playMusic();
 
         context.close();
     }
