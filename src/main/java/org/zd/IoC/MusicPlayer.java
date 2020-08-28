@@ -1,35 +1,19 @@
 package org.zd.IoC;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MusicPlayer {
-    private Music music;
-    private String name;
-    private int volume;
-
-    public MusicPlayer(Music music){
-        this.music = music;
+    private ClassicalMusic music;
+    private RockMusic music2;
+    @Autowired
+    public MusicPlayer(ClassicalMusic music, RockMusic music2){
+        this.music =music;
+        this.music2 = music2;
     }
 
-    public void setMusic(Music music) {
-        this.music = music;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setVolume(int valume) {
-        this.volume = valume;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getVolume() {
-        return volume;
-    }
-
-    public void playMusic(){
-        System.out.println("playing: "+music.getSong());
+    public String playMusic(){
+        return "playing: "+music.getSong();
     }
 }
