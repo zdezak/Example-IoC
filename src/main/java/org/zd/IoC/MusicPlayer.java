@@ -1,24 +1,13 @@
 package org.zd.IoC;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+
 public class MusicPlayer {
-    private Music music;
+    @Value("${musicPlayer.name}")
     private String name;
+    @Value("${musicPlayer.volume}")
     private int volume;
-
-    public MusicPlayer(){
-    }
-
-    public void setMusic(Music music) {
-        this.music = music;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setVolume(int valume) {
-        this.volume = valume;
-    }
 
     public String getName() {
         return name;
@@ -28,7 +17,17 @@ public class MusicPlayer {
         return volume;
     }
 
-    public void playMusic(){
-        System.out.println("playing: "+music.getSong());
+    private Music music1;
+    private Music music2;
+
+    public MusicPlayer(@Qualifier("rockMusic") Music music1,
+                       @Qualifier("classicalMusic")Music music2){
+        this.music2 =music2;
+        this.music1 = music1;
+    }
+
+    public String playMusic(){
+        return "playing: "+music1.getSong()
+                +". Next "+ music2.getSong();
     }
 }
