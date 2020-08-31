@@ -2,39 +2,18 @@ package org.zd.IoC;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ListIterator;
+import java.util.Random;
 
 public class MusicPlayer {
-    private List<Music> music = new ArrayList<>();
-    private String name;
-    private int volume;
+    private List<Music> music;
 
-    public MusicPlayer(){
-    }
-
-    public void setMusic(List<Music> music) {
+    public MusicPlayer(List<Music> music){
         this.music = music;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setVolume(int valume) {
-        this.volume = valume;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getVolume() {
-        return volume;
-    }
-
     public void playMusicList(){
-        for (Music element: music) {
-            System.out.println("playing: " + element.getSong());
-        }
+        Random random = new Random();
+        int randomNumber = random.nextInt(3);
+        System.out.println("playing: " + music.get(randomNumber).getSong());
     }
 }
