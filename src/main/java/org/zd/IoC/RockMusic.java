@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component
 public class RockMusic implements Music {
     @PostConstruct
     public void doMyInit() {
